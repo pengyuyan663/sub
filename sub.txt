@@ -1,1 +1,23 @@
-dm1lc3M6Ly9ZWFYwYnpwbVpEQXdPVEl6WVMxaU1HTXlMVFEyTWprdFlXV21OeTFsT1daR01UVmhPV1EzTWpKQWVucDVkM2xzTG5oNWVqb3pNREF4TVE/cGF0aD0vYWxpY2RuJm9iZnNQYXJhbT0lN0IlMjJIb3N0JTIyOiUyMmd3LmFsaWNkbi5jb20lMjIlN0Qmb2Jmcz13ZWJzb2NrZXQmYWx0ZXJJZD0wCg==
+# ===== 节点 =====
+vmess://YXV0bzpmZDAwOTI3YS1iMGMyLTQ2MjktYWVmNy1kOWZmMTVhOWQ3MjJAenp5Z3dsLnh5ejozMDAxMQ?path=/alicdn&obfs=websocket&obfsParam={"Host":"gw.alicdn.com"}&alterId=0
+
+# ===== Clash 专用（兼容模式）=====
+proxies:
+  - name: 家宽节点
+    type: vmess
+    server: zzygwl.xyz
+    port: 30011
+    uuid: fd00927a-b0c2-4629-aef7-d9ff15a9d722
+    alterId: 0
+    cipher: auto
+    network: ws
+    ws-opts:
+      path: /alicdn
+      headers:
+        Host: gw.alicdn.com
+
+# ===== 分流规则 =====
+rules:
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,家宽节点
